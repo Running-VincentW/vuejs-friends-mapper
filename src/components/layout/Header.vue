@@ -7,14 +7,14 @@
             <strong>Friends Finder</strong>
           </p>
 
-          <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+          <a @click="showNav = !showNav" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
 
-        <div id="navbar" class="navbar-menu">
+        <div id="navbar" class="navbar-menu" v-bind:class="{'is-active':showNav}">
           <div class="navbar-start">
             <router-link to="/" class="navbar-item">Friends</router-link>
             <router-link to="/about" class="navbar-item">Map</router-link>
@@ -29,6 +29,11 @@
 
 <script>
 export default {
+  data(){
+    return{
+      showNav: false,
+    }
+  }
 
 }
 </script>
